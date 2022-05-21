@@ -3,17 +3,17 @@
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> n = 2
+<pre><strong>Input:</strong> n = 2
 <strong>Output:</strong> [0,1,1]
 <strong>Explanation:</strong>
 0 --&gt; 0
 1 --&gt; 1
 2 --&gt; 10
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p><strong>Example 2:</strong></p>
 
-<pre style="position: relative;"><strong>Input:</strong> n = 5
+<pre><strong>Input:</strong> n = 5
 <strong>Output:</strong> [0,1,1,2,1,2]
 <strong>Explanation:</strong>
 0 --&gt; 0
@@ -22,7 +22,7 @@
 3 --&gt; 11
 4 --&gt; 100
 5 --&gt; 101
-<div class="open_grepper_editor" title="Edit &amp; Save To Grepper"></div></pre>
+</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
