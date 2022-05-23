@@ -6,10 +6,11 @@ class Solution(object):
         """
         rev = 0
         temp = x
-        result = False
-        while (temp>0):
-            rev = rev*10 + temp%10
+        res = False
+        while temp>0:
+            rem = temp%10
+            rev = rev*10 + rem
             temp = temp//10
         if rev == x:
-            result = True
-        return result
+            res = True
+        return res
