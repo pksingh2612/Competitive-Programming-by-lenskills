@@ -5,11 +5,10 @@ class Solution(object):
         :rtype: List[int]
         """
         """ Time Complexity:  O(nlogn) & Auxiliary Space: O(sort)"""
-        hash_set = set(nums)
-        first = 1
-        last = len(nums) + 1
-        result = []
-        for n in range(first,last):
-            if n not in hash_set:
-                result.append(n)
-        return result
+        ans = []
+        for c in nums:
+            nums[abs(c)-1] = -abs(nums[abs(c)-1])
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                ans.append(i+1)
+        return ans
