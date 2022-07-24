@@ -8,8 +8,10 @@ class Solution(object):
         hash_set = set(nums)
         first = 1
         last = len(nums) + 1
-        result = []
+        count = 0
         for n in range(first,last):
             if n not in hash_set:
-                result.append(n)
-        return result
+                count+=1
+                nums.append(n)
+
+        return [] if len(nums)+1==last else nums[-count:]
