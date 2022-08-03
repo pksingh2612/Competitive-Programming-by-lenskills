@@ -9,12 +9,11 @@ class Solution(object):
         third = 1
         if 0<=n<=1:
             return n
-        elif n==2:
+        if n==2:
             return third
-        else:
-            for i in range(3,n+1):
-                curr = first + second + third
-                first = second
-                second = third
-                third = curr
+        for i in range(3,n+1):
+            curr = first + second + third
+            first = second
+            second = third
+            third = curr
         return third
