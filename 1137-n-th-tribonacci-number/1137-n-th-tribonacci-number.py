@@ -4,9 +4,17 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        t=[0,1,1]
-        for i in range(0,n+1):
-            t.append(t[i]+t[i+1]+t[i+2])
-            
-        
-        return t[n]
+        first = 0
+        second = 1
+        third = 1
+        if 0<=n<=1:
+            return n
+        elif n==2:
+            return third
+        else:
+            for i in range(3,n+1):
+                curr = first + second + third
+                first = second
+                second = third
+                third = curr
+        return third
