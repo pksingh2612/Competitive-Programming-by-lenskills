@@ -5,9 +5,9 @@ class Solution(object):
         :type high: int
         :rtype: int
         """
-        N = (high-low)//2
+        N = (high-low)>>1 # divide by 2 => right shift
         
-        if high&1 == 1 or low&1 == 1:
+        if high&1 == 1 or low&1 == 1: # hight % 2 or high&1  same
             N+=1
 
         return N
