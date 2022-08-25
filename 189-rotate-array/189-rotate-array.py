@@ -14,7 +14,7 @@ class Solution(object):
         """
         list_length = len(nums)
         nums = self.reverse(nums,0,list_length-1)
-        k = k%list_length
+        k = k%list_length # to move to kth index from first of list
         nums = self.reverse(nums,0,k-1)
         nums = self.reverse(nums,k,list_length-1)
         return nums
