@@ -19,24 +19,6 @@ class Solution(object):
                 count1 -= 1
                 count2 -= 1
         return nums[maj_index1],nums[maj_index2]
-    
-    def isMajority(self,nums,n,maj_element1,maj_element2):
-        count1 = 0
-        count2 = 0
-        for i in range(n):
-            if nums[i] == maj_element1:
-                count1 += 1
-            elif nums[i] == maj_element2:
-                count2 += 1
-        cond = n/3
-        if count1 > cond and count2 > cond:
-            return True,True
-        elif count1 > cond and count2 <= cond:
-            return True,False
-        elif count1 <= cond and count2 > cond:
-            return False,True
-        else:
-            return False,False
             
     def majorityElement(self, nums):
         """
@@ -44,12 +26,21 @@ class Solution(object):
         :rtype: List[int]
         """
         list_length = len(nums)
-        ele1,ele2 = self.findTwoMajorityElement(nums,list_length)
-        ele1R,ele2R = self.isMajority(nums, list_length, ele1, ele2)
-        if  ele1R == True and ele2R == True:
-            return [ele1,ele2]
-        elif ele1R == True and ele2R == False:
-            return [ele1]
-        elif ele1R == False and ele2R == True:
-            return [ele2]
+        maj_element1,maj_element2 = self.findTwoMajorityElement(nums,list_length)
+        count1 = 0
+        count2 = 0
+        for i in range(list_length):
+            if nums[i] == maj_element1:
+                count1 += 1
+            elif nums[i] == maj_element2:
+                count2 += 1
+        cond = list_length/3
+        if count1 > cond and count2 > cond:
+            return [maj_element1,maj_element2]
+        elif count1 > cond and count2 <= cond:
+            return [maj_element1]
+        elif count1 <= cond and count2 > cond:
+            return [maj_element2]
+        else:
+            return []
         
