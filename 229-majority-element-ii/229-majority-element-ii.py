@@ -28,13 +28,12 @@ class Solution(object):
                 count1 += 1
             elif nums[i] == maj_element2:
                 count2 += 1
-        # print(count1,count2,n/3)
-        
-        if count1 > n/3 and count2 > n/3:
+        cond = n/3
+        if count1 > cond and count2 > cond:
             return True,True
-        elif count1 > n/3 and count2 <= n/3:
+        elif count1 > cond and count2 <= cond:
             return True,False
-        elif count1 <= n/3 and count2 > n/3:
+        elif count1 <= cond and count2 > cond:
             return False,True
         else:
             return False,False
@@ -46,9 +45,7 @@ class Solution(object):
         """
         list_length = len(nums)
         ele1,ele2 = self.findTwoMajorityElement(nums,list_length)
-        # print(ele1,ele2)
         ele1R,ele2R = self.isMajority(nums, list_length, ele1, ele2)
-        # print(ele1R,ele2R)
         if  ele1R == True and ele2R == True:
             return [ele1,ele2]
         elif ele1R == True and ele2R == False:
