@@ -4,7 +4,7 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        if n<=1:
+        if n <= 1:
             return n
-        if n>1:
-            return self.fib(n-1)+self.fib(n-2)
+        
+        return self.fib(n-1)+self.fib(n-2)
